@@ -1,0 +1,47 @@
+
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# MRem
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of MRem is to ...
+
+## Installation
+
+You can install the development version of MRem like so:
+
+``` r
+library(devtools)
+install_github("lamessad/MRem") ```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(MRem)
+data("dat")
+head(dat)
+betaX = dat$betaX
+betaY = dat$betaY
+betaXse = dat$betaXse
+betaYse = dat$betaYse
+ny = dat$ny
+est = mr_em(betaY, betaX, betaYse, betaXse, ny, 0.05, 5e-8, 100)  
+est
+```  
